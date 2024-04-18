@@ -3,7 +3,7 @@ import random
 
 NUM_QUESTIONS_PER_QUIZ = 5
 
-QUESTIONS = {
+QUESTIONS = { 
 
     "How many active teams were present in Quebec during the 2024 season": [
 
@@ -43,14 +43,14 @@ QUESTIONS = {
     ],
 }
 
-num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS))
-questions = random.sample(list(QUESTIONS.items()), k=num_questions)
+num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS)) #gets the number of questions
+questions = random.sample(list(QUESTIONS.items()), k=num_questions) #scrambles the questions
 
 num_correct = 0
-for num, (question, alternatives) in enumerate(questions, start=1):
+for num, (question, alternatives) in enumerate(questions, start=1): #enumerate the qustions
     print(f"\nQuestion {num}:")
     print(f"{question}?")
-    correct_answer = alternatives[0]
+    correct_answer = alternatives[0] #defines the correct question
     labeled_alternatives = dict(
         zip(ascii_lowercase, random.sample(alternatives, k=len(alternatives)))
     )
